@@ -1,6 +1,12 @@
+import { css } from '@emotion/react'
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import styled from '@emotion/styled'
+
+const Text = styled.div`
+  color: turquoise;
+`
 
 function App() {
   return (
@@ -10,14 +16,8 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div css={css`color: lightblue`}>Emotion CSS prop</div>
+        <Text>Emotion styled</Text>
       </header>
     </div>
   );
