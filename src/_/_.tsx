@@ -1,3 +1,7 @@
+import { SassElement } from './SassElement'
+import { SassModuleElement } from './SassModuleElement'
+import { ScssElement } from './ScssElement'
+import { ScssModuleElement } from './ScssModuleElement'
 import { CssElement } from './CssElement'
 import { CssModuleElement } from './CssModuleElement'
 import { EmotionCssElement } from './EmotionCssElement'
@@ -14,6 +18,10 @@ export default () => (
     <main>
       <CssElement/>
       <CssModuleElement/>
+      <SassElement/>
+      <SassModuleElement/>
+      <ScssElement/>
+      <ScssModuleElement/>
       <EmotionStyledElement/>
       <EmotionCssElement/>
       <JsElement/>
