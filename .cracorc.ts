@@ -14,5 +14,11 @@ export default {
         tsConfigPath: './tsconfig.paths.json'
       }
     },
+    {
+      plugin: require('./.misc/craco-plugin-sass-additional-data'),
+      options: {
+        pathToFile: './src/assets/styles/additionalData.json'
+      }
+    }
   ]
 }
