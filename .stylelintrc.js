@@ -32,7 +32,25 @@ module.exports = {
   overrides: [
     {
       files: [ '*.sass', '**/*.sass' ],
+
       customSyntax: 'sugarss'
+    },
+
+    {
+      files: [ '*.js', '**/*.js', '*.jsx', '**/*.jsx', '*.ts', '**/*.ts', '*.tsx', '**/*.tsx' ],
+
+      processors: [ 'stylelint-processor-styled-components' ],
+
+      extends: [
+        'stylelint-config-standard-scss',
+        'stylelint-config-property-sort-order-smacss',
+        'stylelint-config-styled-components',
+        "stylelint-config-prettier"
+      ],
+
+      rules: {
+        'indentation': null
+      }
     },
   ]
 }
