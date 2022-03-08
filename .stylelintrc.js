@@ -2,6 +2,7 @@ module.exports = {
   extends: [
     'stylelint-config-standard-scss',
     'stylelint-config-css-modules',
+    'stylelint-config-property-sort-order-smacss',
     'stylelint-config-prettier',
   ],
 
