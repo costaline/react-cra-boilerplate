@@ -1,12 +1,12 @@
-import { SassElement } from './SassElement'
-import { SassModuleElement } from './SassModuleElement'
-import { ScssElement } from './ScssElement'
-import { ScssModuleElement } from './ScssModuleElement'
 import { CssElement } from './CssElement'
 import { CssModuleElement } from './CssModuleElement'
 import { EmotionCssElement } from './EmotionCssElement'
 import { EmotionStyledElement } from './EmotionStyledElement'
 import { JsElement } from './JsElement'
+import { SassElement } from './SassElement'
+import { SassModuleElement } from './SassModuleElement'
+import { ScssElement } from './ScssElement'
+import { ScssModuleElement } from './ScssModuleElement'
 import { TsElement } from './TsElement'
 
 export default () => (
@@ -16,17 +16,16 @@ export default () => (
     </header>
 
     <main>
-      <CssElement/>
-      <CssModuleElement/>
-      <SassElement/>
-      <SassModuleElement/>
-      <ScssElement/>
-      <ScssModuleElement/>
-      <EmotionStyledElement/>
-      <EmotionCssElement/>
-      <JsElement/>
-      <TsElement/>
+      <CssElement />
+      <CssModuleElement />
+      <SassElement />
+      <SassModuleElement />
+      <ScssElement />
+      <ScssModuleElement />
+      <EmotionStyledElement />
+      <EmotionCssElement />
+      <JsElement />
+      <TsElement />
     </main>
   </div>
 )
-
