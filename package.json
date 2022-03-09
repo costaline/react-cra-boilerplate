@@ -8,6 +8,7 @@
     "prettier:check": "prettier --ignore-unknown --check src",
     "prettier:fix": "prettier --ignore-unknown --write src",
     "stylelint:css:check": "stylelint \"src/**/*.{css,scss,sass}\"",
+    "stylelint:css:fix": "npm run stylelint:css:check -- --fix",
     "stylelint:js:check": "stylelint \"src/**/*.{js,jsx,ts,tsx}\"",
     "eslint:check": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
     "eslint:fix": "npm run eslint:check -- --fix",

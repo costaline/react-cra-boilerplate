@@ -1,6 +1,5 @@
 module.exports = {
   extends: [
-    'stylelint-config-standard-scss',
     'stylelint-config-css-modules',
     'stylelint-config-property-sort-order-smacss',
     'stylelint-config-prettier',
@@ -21,15 +20,26 @@ module.exports = {
     'rule-empty-line-before': [ 'always', {
       'except': [ 'after-single-line-comment', 'first-nested' ]
     }],
-
-    'scss/dollar-variable-first-in-block': [ true, {
-      'ignore': [ 'comments', 'imports' ]
-    }],
-    'scss/at-rule-no-unknown': true,
-    'scss/selector-no-redundant-nesting-selector': true,
   },
 
   overrides: [
+    {
+      files: ['*.scss', '**/*.scss', '*.sass', '**/*.sass'],
+      extends: [
+        'stylelint-config-standard-scss',
+        'stylelint-config-css-modules',
+        'stylelint-config-property-sort-order-smacss',
+        'stylelint-config-prettier',
+      ],
+      rules: {
+        'scss/dollar-variable-first-in-block': [ true, {
+          'ignore': [ 'comments', 'imports' ]
+        }],
+        'scss/at-rule-no-unknown': true,
+        'scss/selector-no-redundant-nesting-selector': true,
+      }
+    },
+
     {
       files: [ '*.sass', '**/*.sass' ],
 
