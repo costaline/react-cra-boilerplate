@@ -1,4 +1,4 @@
-import {StyledDiv} from './EmotionStyledElement.styled'
+import { StyledDiv } from './EmotionStyledElement.styled'
 
 export const EmotionStyledElement = () => (
   <StyledDiv>Emotion styled element</StyledDiv>

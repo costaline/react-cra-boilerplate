@@ -1,11 +1,12 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import Component from './_';
+import React from 'react'
+import { render, screen } from '@testing-library/react'
+
+import Component from './_'
 
 test('renders info header', () => {
-  render(<Component />);
+  render(<Component />)
 
-  const headerElement = screen.getByText(/Main features/i);
+  const headerElement = screen.getByText(/Main features/i)
 
-  expect(headerElement).toBeInTheDocument();
-});
+  expect(headerElement).toBeInTheDocument()
+})

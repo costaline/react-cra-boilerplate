@@ -1,3 +1,1 @@
-export const TsElement = () => (
-  <div>TS element</div>
-)
+export const TsElement = () => <div>TS element</div>

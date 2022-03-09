@@ -3,10 +3,10 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
   align-items: center;
   justify-content: center;
+  width: 100vw;
+  height: 100vh;
   background-color: #282c34;
 }
 
@@ -23,10 +23,10 @@
 
 #initial-spinner .lds-ripple div {
   position: absolute;
-  border: 4px solid #fff;
-  opacity: 1;
-  border-radius: 50%;
   animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  opacity: 1;
 }
 
 #initial-spinner .lds-ripple div:nth-child(2) {
