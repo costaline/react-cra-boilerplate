@@ -45,12 +45,8 @@ module.exports = {
         'stylelint-config-standard-scss',
         'stylelint-config-property-sort-order-smacss',
         'stylelint-config-styled-components',
-        "stylelint-config-prettier"
+        'stylelint-config-prettier'
       ],
-
-      rules: {
-        'indentation': null
-      }
     },
   ]
 }
