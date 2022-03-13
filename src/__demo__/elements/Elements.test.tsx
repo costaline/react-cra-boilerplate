@@ -1,10 +1,10 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 
-import Component from './_'
+import { Elements } from './Elements'
 
 test('renders info header', () => {
-  render(<Component />)
+  render(<Elements />)
 
   const headerElement = screen.getByText(/Main features/i)
 

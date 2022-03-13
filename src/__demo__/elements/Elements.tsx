@@ -9,7 +9,7 @@ import { ScssElement } from './ScssElement'
 import { ScssModuleElement } from './ScssModuleElement'
 import { TsElement } from './TsElement'
 
-export default () => (
+export const Elements = () => (
   <div>
     <header>
       <h1>Main features</h1>

@@ -1,14 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import { App } from './App'
+// import { App } from './App'
+import Demo from './__demo__'
 import reportWebVitals from './reportWebVitals'
 
 import './index.css'
 
 const app = (
   <React.StrictMode>
-    <App />
+    {/* <App /> */}
+    <Demo />
   </React.StrictMode>
 )
 
