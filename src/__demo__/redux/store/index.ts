@@ -1,12 +1,7 @@
-import { composeWithDevTools } from '@redux-devtools/extension'
-import { applyMiddleware, createStore } from 'redux'
-import thunk from 'redux-thunk'
+import { TodoActions } from './todo'
+import { UserActions } from './user'
 
-import { rootReducer } from './reducers'
-
-const composeEnhancers = composeWithDevTools({})
-
-export const store = createStore(
-  rootReducer,
-  composeEnhancers(applyMiddleware(thunk))
-)
+export const Actions = {
+  ...TodoActions,
+  ...UserActions,
+}

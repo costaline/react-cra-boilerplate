@@ -1,7 +1,8 @@
 import { Dispatch } from 'react'
 import axios from 'axios'
 
-import { UserAction, UserActionTypes } from '../types/user'
+import { UserActionTypes } from './constants'
+import { UserAction } from './types'
 
 export const fetchUsers = () => async (dispatch: Dispatch<UserAction>) => {
   try {

@@ -1,7 +1,8 @@
 import { Dispatch } from 'react'
 import axios from 'axios'
 
-import { TodoAction, TodoActionTypes } from '../types/todo'
+import { TodoActionTypes } from './constants'
+import { TodoAction } from './types'
 
 export const fetchTodos =
   (page = 1, limit = 10) =>

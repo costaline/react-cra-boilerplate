@@ -1,10 +1,6 @@
-import { UserAction, UserActionTypes, UserState } from '../types/user'
-
-const initialState: UserState = {
-  users: [],
-  loading: false,
-  error: null,
-}
+import { UserActionTypes } from './constants'
+import { initialState } from './initialState'
+import { UserAction, UserState } from './types'
 
 export const userReducer = (
   state = initialState,

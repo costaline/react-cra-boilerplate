@@ -1,12 +1,6 @@
-import { TodoAction, TodoActionTypes, TodoState } from '../types/todo'
-
-const initialState: TodoState = {
-  todos: [],
-  page: 1,
-  error: null,
-  limit: 10,
-  loading: false,
-}
+import { TodoActionTypes } from './constants'
+import { initialState } from './initialState'
+import { TodoAction, TodoState } from './types'
 
 export const todoReducer = (
   state: TodoState = initialState,
