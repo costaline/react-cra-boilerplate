@@ -29,22 +29,23 @@ module.exports = {
     },
   },
 
-  plugins: [
-    'import',
-    'react',
-    '@typescript-eslint',
-    'simple-import-sort',
-    'unused-imports',
-  ],
+  plugins: ['import', 'react', '@typescript-eslint', 'simple-import-sort'],
 
   rules: {
     'arrow-body-style': ['warn', 'as-needed'],
+    'default-param-last': 'warn',
     'dot-notation': 'off',
     'global-require': 'off',
     'lines-between-class-members': ['warn', 'always'],
     'no-console': 'warn',
     'no-restricted-exports': 'off',
-    'no-unused-vars': 'off',
+    'no-unused-vars': [
+      'warn',
+      {
+        varsIgnorePattern: '^_$',
+        argsIgnorePattern: '^_$',
+      },
+    ],
     'no-use-before-define': 'off',
     'object-curly-newline': 'off',
     'object-curly-spacing': ['warn', 'always'],
@@ -77,6 +78,7 @@ module.exports = {
         tsx: 'never',
       },
     ],
+    'import/order': 'warn',
     'import/no-unresolved': 'error',
     'import/prefer-default-export': 'off',
 
@@ -155,14 +157,24 @@ module.exports = {
         ],
       },
     ],
-
-    'unused-imports/no-unused-imports': 'warn',
-    'unused-imports/no-unused-vars': [
-      'warn',
-      {
-        varsIgnorePattern: '^_$',
-        argsIgnorePattern: '^_$',
-      },
-    ],
   },
+
+  overrides: [
+    {
+      files: ['**/*.ts', '**/*.tsx'],
+      rules: {
+        'no-shadow': 'off',
+        'no-unused-vars': 'off',
+
+        '@typescript-eslint/no-shadow': ['error'],
+        '@typescript-eslint/no-unused-vars': [
+          'warn',
+          {
+            varsIgnorePattern: '^_$',
+            argsIgnorePattern: '^_$',
+          },
+        ],
+      },
+    },
+  ],
 }
