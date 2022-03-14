@@ -1,9 +1,9 @@
 // import { Elements } from './elements'
-import { Redux } from './redux'
+import Redux1 from './redux-1'
 
 export default () => (
   <div>
     {/* <Elements /> */}
-    <Redux />
+    <Redux1 />
   </div>
 )
