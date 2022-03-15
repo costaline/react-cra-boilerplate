@@ -1,19 +1,19 @@
-import { TodoActionTypes } from './constants'
+import C from './constants'
 import { initialState } from './initialState'
-import { TodoAction, TodoState } from './types'
+import { TodoActions, TodoState } from './types'
 
 export const todoReducer = (
   state: TodoState = initialState,
-  action: TodoAction
+  action: TodoActions
 ): TodoState => {
   switch (action.type) {
-    case TodoActionTypes.FETCH_TODOS:
+    case C.FETCH_TODOS_START:
       return { ...state, loading: true }
-    case TodoActionTypes.FETCH_TODOS_SUCCESS:
+    case C.FETCH_TODOS_SUCCESS:
       return { ...state, loading: false, todos: action.payload }
-    case TodoActionTypes.FETCH_TODOS_ERROR:
+    case C.FETCH_TODOS_FAILURE:
       return { ...state, loading: false, error: action.payload }
-    case TodoActionTypes.SET_TODO_PAGE:
+    case C.SET_TODO_PAGE:
       return { ...state, page: action.payload }
     default:
       return state

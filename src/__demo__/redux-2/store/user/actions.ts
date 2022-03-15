@@ -1,26 +1,19 @@
-import { Dispatch } from 'react'
-import axios from 'axios'
+import C from './constants'
+import * as T from './types'
 
-import { UserActionTypes } from './constants'
-import { UserAction } from './types'
+export const fetchUsersStart = () =>
+  ({
+    type: C.FETCH_USERS_START,
+  } as const)
 
-export const fetchUsers = () => async (dispatch: Dispatch<UserAction>) => {
-  try {
-    dispatch({ type: UserActionTypes.FETCH_USERS })
-    const response = await axios.get(
-      'https://jsonplaceholder.typicode.com/users'
-    )
+export const fetchUsersSuccess = (payload: T.FetchUsersSuccessPayload) =>
+  ({
+    type: C.FETCH_USERS_SUCCESS,
+    payload,
+  } as const)
 
-    setTimeout(() => {
-      dispatch({
-        type: UserActionTypes.FETCH_USERS_SUCCESS,
-        payload: response.data,
-      })
-    }, 500)
-  } catch (e) {
-    dispatch({
-      type: UserActionTypes.FETCH_USERS_ERROR,
-      payload: 'fetch error',
-    })
-  }
-}
+export const fetchUsersFailure = (error: T.FetchUsersFailurePayload) =>
+  ({
+    type: C.FETCH_USERS_FAILURE,
+    payload: error,
+  } as const)

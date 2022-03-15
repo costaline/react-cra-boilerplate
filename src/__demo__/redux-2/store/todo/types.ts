@@ -1,5 +1,10 @@
-import { TodoActionTypes } from './constants'
+import { Action } from 'redux'
+import { ThunkAction } from 'redux-thunk'
 
+import * as actions from './actions'
+import C from './constants'
+
+/* state */
 export interface TodoState {
   todos: any[]
   loading: boolean
@@ -8,27 +13,30 @@ export interface TodoState {
   limit: number
 }
 
-interface FetchTodoAction {
-  type: TodoActionTypes.FETCH_TODOS
-}
+/* action payloads | errors */
+export type FetchTodoSuccessPayload = any[]
+export type FetchTodoFailurePayload = string
 
-interface FetchTodoSuccessAction {
-  type: TodoActionTypes.FETCH_TODOS_SUCCESS
-  payload: any[]
-}
+/* sync actions */
+export type TodoActions = ReturnType<InferValue<typeof actions>>
 
-interface FetchTodoErrorAction {
-  type: TodoActionTypes.FETCH_TODOS_ERROR
-  payload: string
-}
+/* common thunk type */
+type ThunkResult<R, A extends Action> = ThunkAction<R, TodoState, void, A>
 
-interface SetTodoPage {
-  type: TodoActionTypes.SET_TODO_PAGE
-  payload: number
-}
+/* thunk actions */
+export type FetchTodosResult = ThunkResult<
+  Promise<void>,
+  Extract<
+    TodoActions,
+    Action<
+      | typeof C.FETCH_TODOS_START
+      | typeof C.FETCH_TODOS_SUCCESS
+      | typeof C.FETCH_TODOS_FAILURE
+    >
+  >
+>
 
-export type TodoAction =
-  | FetchTodoAction
-  | FetchTodoSuccessAction
-  | FetchTodoErrorAction
-  | SetTodoPage
+export type ThunkFetchTodos = (
+  page?: number,
+  limit?: number
+) => FetchTodosResult

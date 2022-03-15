@@ -1,36 +1,25 @@
-import { Dispatch } from 'react'
-import axios from 'axios'
+import C from './constants'
+import * as T from './types'
 
-import { TodoActionTypes } from './constants'
-import { TodoAction } from './types'
+export const fetchTodosStart = () =>
+  ({
+    type: C.FETCH_TODOS_START,
+  } as const)
 
-export const fetchTodos =
-  (page = 1, limit = 10) =>
-  async (dispatch: Dispatch<TodoAction>) => {
-    try {
-      dispatch({ type: TodoActionTypes.FETCH_TODOS })
-      const response = await axios.get(
-        'https://jsonplaceholder.typicode.com/todos',
-        {
-          params: { _page: page, _limit: limit },
-        }
-      )
+export const fetchTodosSuccess = (payload: T.FetchTodoSuccessPayload) =>
+  ({
+    type: C.FETCH_TODOS_SUCCESS,
+    payload,
+  } as const)
 
-      setTimeout(() => {
-        dispatch({
-          type: TodoActionTypes.FETCH_TODOS_SUCCESS,
-          payload: response.data,
-        })
-      }, 500)
-    } catch (e) {
-      dispatch({
-        type: TodoActionTypes.FETCH_TODOS_ERROR,
-        payload: 'fetch error',
-      })
-    }
-  }
+export const fetchTodosFailure = (error: T.FetchTodoFailurePayload) =>
+  ({
+    type: C.FETCH_TODOS_FAILURE,
+    payload: error,
+  } as const)
 
-export const setTodoPage = (page: number): TodoAction => ({
-  type: TodoActionTypes.SET_TODO_PAGE,
-  payload: page,
-})
+export const setTodoPage = (page: number) =>
+  ({
+    type: C.SET_TODO_PAGE,
+    payload: page,
+  } as const)

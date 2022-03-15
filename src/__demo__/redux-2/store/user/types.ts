@@ -1,26 +1,37 @@
-import { UserActionTypes } from './constants'
+import { Action } from 'redux'
+import { ThunkAction } from 'redux-thunk'
 
+import * as actions from './actions'
+import C from './constants'
+
+/* state */
 export interface UserState {
   users: any[]
   loading: boolean
   error: null | string
 }
 
-interface FetchUsersAction {
-  type: UserActionTypes.FETCH_USERS
-}
+/* action payloads | errors */
+export type FetchUsersSuccessPayload = any[]
+export type FetchUsersFailurePayload = string
 
-interface FetchUserSuccessAction {
-  type: UserActionTypes.FETCH_USERS_SUCCESS
-  payload: any[]
-}
+/* sync actions */
+export type UserActions = ReturnType<InferValue<typeof actions>>
 
-interface FetchUsersErrorAction {
-  type: UserActionTypes.FETCH_USERS_ERROR
-  payload: string
-}
+/* common thunk type */
+type ThunkResult<R, A extends Action> = ThunkAction<R, UserState, void, A>
 
-export type UserAction =
-  | FetchUsersAction
-  | FetchUsersErrorAction
-  | FetchUserSuccessAction
+/* thunk actions */
+export type FetchUsersResult = ThunkResult<
+  Promise<void>,
+  Extract<
+    UserActions,
+    Action<
+      | typeof C.FETCH_USERS_START
+      | typeof C.FETCH_USERS_SUCCESS
+      | typeof C.FETCH_USERS_FAILURE
+    >
+  >
+>
+
+export type ThunkFetchUsers = () => FetchUsersResult
