@@ -39,6 +39,10 @@ module.exports = {
     'global-require': 'off',
     'lines-between-class-members': ['warn', 'always'],
     'no-console': 'warn',
+    'no-param-reassign': [
+      'warn',
+      { props: true, ignorePropertyModificationsForRegex: ['^draft'] },
+    ],
     'no-restricted-exports': 'off',
     'no-unused-vars': [
       'warn',
