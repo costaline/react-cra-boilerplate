@@ -1,12 +1,14 @@
+import { Immutable } from 'immer'
+
 import { TodoActionTypes } from './constants'
 
-export interface TodoState {
+export type TodoState = Immutable<{
   todos: any[]
   loading: boolean
   error: null | string
   page: number
   limit: number
-}
+}>
 
 interface FetchTodoAction {
   type: TodoActionTypes.FETCH_TODOS

@@ -1,10 +1,12 @@
+import { Immutable } from 'immer'
+
 import { UserActionTypes } from './constants'
 
-export interface UserState {
+export type UserState = Immutable<{
   users: any[]
   loading: boolean
   error: null | string
-}
+}>
 
 interface FetchUsersAction {
   type: UserActionTypes.FETCH_USERS
