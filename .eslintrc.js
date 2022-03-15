@@ -6,6 +6,7 @@ module.exports = {
 
   extends: [
     'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
     'airbnb',
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
@@ -32,7 +33,7 @@ module.exports = {
   plugins: ['import', 'react', '@typescript-eslint', 'simple-import-sort'],
 
   rules: {
-    'arrow-body-style': ['warn', 'as-needed'],
+    'arrow-body-style': 'off',
     'default-param-last': 'warn',
     'dot-notation': 'off',
     'global-require': 'off',
