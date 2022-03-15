@@ -1,3 +1,4 @@
+import { Immutable } from 'immer'
 import { Action } from 'redux'
 import { ThunkAction } from 'redux-thunk'
 
@@ -5,13 +6,13 @@ import * as actions from './actions'
 import C from './constants'
 
 /* state */
-export interface TodoState {
+export type TodoState = Immutable<{
   todos: any[]
   loading: boolean
   error: null | string
   page: number
   limit: number
-}
+}>
 
 /* action payloads | errors */
 export type FetchTodoSuccessPayload = any[]

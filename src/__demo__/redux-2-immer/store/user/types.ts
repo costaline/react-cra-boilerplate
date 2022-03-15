@@ -1,3 +1,4 @@
+import { Immutable } from 'immer'
 import { Action } from 'redux'
 import { ThunkAction } from 'redux-thunk'
 
@@ -5,11 +6,11 @@ import * as actions from './actions'
 import C from './constants'
 
 /* state */
-export interface UserState {
+export type UserState = Immutable<{
   users: any[]
   loading: boolean
   error: null | string
-}
+}>
 
 /* action payloads | errors */
 export type FetchUsersSuccessPayload = any[]

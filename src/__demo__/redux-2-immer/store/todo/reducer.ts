@@ -1,21 +1,29 @@
+import { produce } from 'immer'
+
 import C from './constants'
 import { initialState } from './initialState'
-import { TodoActions, TodoState } from './types'
+import { TodoActions } from './types'
 
-export const todoReducer = (
-  state: TodoState = initialState,
-  action: TodoActions
-): TodoState => {
+export const todoReducer = produce((draft, action: TodoActions) => {
   switch (action.type) {
     case C.FETCH_TODOS_START:
-      return { ...state, loading: true }
+      draft.loading = true
+      break
     case C.FETCH_TODOS_SUCCESS:
-      return { ...state, loading: false, todos: action.payload }
+      draft.loading = false
+      draft.todos = action.payload
+      break
     case C.FETCH_TODOS_FAILURE:
-      return { ...state, loading: false, error: action.payload }
+      draft.loading = false
+      draft.error = action.payload
+      break
     case C.SET_TODO_PAGE:
-      return { ...state, page: action.payload }
-    default:
-      return state
+      draft.page = action.payload
+      break
+    default: {
+      const _: never = action
+
+      break
+    }
   }
-}
+}, initialState)

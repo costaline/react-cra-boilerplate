@@ -1,19 +1,26 @@
+import { produce } from 'immer'
+
 import C from './constants'
 import { initialState } from './initialState'
-import { UserActions, UserState } from './types'
+import { UserActions } from './types'
 
-export const userReducer = (
-  state = initialState,
-  action: UserActions
-): UserState => {
+export const userReducer = produce((draft, action: UserActions) => {
   switch (action.type) {
     case C.FETCH_USERS_START:
-      return { loading: true, error: null, users: [] }
+      draft.loading = true
+      break
     case C.FETCH_USERS_SUCCESS:
-      return { loading: false, error: null, users: action.payload }
+      draft.loading = false
+      draft.users = action.payload
+      break
     case C.FETCH_USERS_FAILURE:
-      return { loading: false, error: action.payload, users: [] }
-    default:
-      return state
+      draft.loading = false
+      draft.error = action.payload
+      break
+    default: {
+      const _: never = action
+
+      break
+    }
   }
-}
+}, initialState)
