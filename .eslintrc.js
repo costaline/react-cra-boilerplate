@@ -115,8 +115,9 @@ module.exports = {
     ],
     'react/jsx-uses-react': 'warn',
     'react/jsx-uses-vars': 'warn',
-    'react/prop-types': 'off',
+    'react/prop-types': 'warn',
     'react/react-in-jsx-scope': 'off',
+    'react/require-default-props': 'off',
     'react/self-closing-comp': ['warn', { component: true, html: true }],
 
     'simple-import-sort/exports': 'warn',
