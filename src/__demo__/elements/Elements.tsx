@@ -1,12 +1,15 @@
 import { CssElement } from './CssElement'
 import { CssModuleElement } from './CssModuleElement'
+import { CssScopedElement } from './CssScopedElement'
 import { EmotionCssElement } from './EmotionCssElement'
 import { EmotionStyledElement } from './EmotionStyledElement'
 import { JsElement } from './JsElement'
 import { SassElement } from './SassElement'
 import { SassModuleElement } from './SassModuleElement'
+import { SassScopedElement } from './SassScopedElement'
 import { ScssElement } from './ScssElement'
 import { ScssModuleElement } from './ScssModuleElement'
+import { ScssScopedElement } from './ScssScopedElement'
 import { TsElement } from './TsElement'
 
 export const Elements = () => (
@@ -18,10 +21,13 @@ export const Elements = () => (
     <main>
       <CssElement />
       <CssModuleElement />
+      <CssScopedElement />
       <SassElement />
       <SassModuleElement />
+      <SassScopedElement />
       <ScssElement />
       <ScssModuleElement />
+      <ScssScopedElement />
       <EmotionStyledElement />
       <EmotionCssElement />
       <JsElement />

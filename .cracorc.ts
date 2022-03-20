@@ -15,6 +15,9 @@ export default {
       }
     },
     {
+      plugin: require('craco-plugin-scoped-css'),
+    },
+    {
       plugin: require('./.misc/craco-plugin-sass-additional-data'),
       options: {
         pathToFile: './src/assets/styles/additionalData.json'
