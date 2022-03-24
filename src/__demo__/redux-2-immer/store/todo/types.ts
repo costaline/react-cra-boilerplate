@@ -7,11 +7,11 @@ import C from './constants'
 
 /* state */
 export type TodoState = Immutable<{
-  todos: any[]
-  loading: boolean
-  error: null | string
-  page: number
-  limit: number
+	todos: any[]
+	loading: boolean
+	error: null | string
+	page: number
+	limit: number
 }>
 
 /* action payloads | errors */
@@ -26,18 +26,18 @@ type ThunkResult<R, A extends Action> = ThunkAction<R, TodoState, void, A>
 
 /* thunk actions */
 export type FetchTodosResult = ThunkResult<
-  Promise<void>,
-  Extract<
-    TodoActions,
-    Action<
-      | typeof C.FETCH_TODOS_START
-      | typeof C.FETCH_TODOS_SUCCESS
-      | typeof C.FETCH_TODOS_FAILURE
-    >
-  >
+	Promise<void>,
+	Extract<
+		TodoActions,
+		Action<
+			| typeof C.FETCH_TODOS_START
+			| typeof C.FETCH_TODOS_SUCCESS
+			| typeof C.FETCH_TODOS_FAILURE
+		>
+	>
 >
 
 export type ThunkFetchTodos = (
-  page?: number,
-  limit?: number
+	page?: number,
+	limit?: number
 ) => FetchTodosResult

@@ -1,5 +1,5 @@
 import { StyledDiv } from './EmotionStyledElement.styled'
 
 export const EmotionStyledElement = () => (
-  <StyledDiv>Emotion styled element</StyledDiv>
+	<StyledDiv>Emotion styled element</StyledDiv>
 )

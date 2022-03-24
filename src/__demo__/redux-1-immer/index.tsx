@@ -4,11 +4,11 @@ import { TodoList, UserList } from './components'
 import { store } from './store/init'
 
 export default () => (
-  <Provider store={store}>
-    <div>
-      <UserList />
-      <hr />
-      <TodoList />
-    </div>
-  </Provider>
+	<Provider store={store}>
+		<div>
+			<UserList />
+			<hr />
+			<TodoList />
+		</div>
+	</Provider>
 )

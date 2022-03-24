@@ -9,6 +9,6 @@ const composeEnhancers = composeWithDevTools({})
 const middlewares: Middleware[] = [thunk]
 
 export const store = createStore(
-  rootReducer,
-  composeEnhancers(applyMiddleware(...middlewares))
+	rootReducer,
+	composeEnhancers(applyMiddleware(...middlewares))
 )

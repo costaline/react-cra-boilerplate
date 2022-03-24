@@ -5,11 +5,11 @@ import { Elements } from './elements'
 // import Redux2Immer from './redux-2-immer'
 
 export default () => (
-  <div>
-    <Elements />
-    {/* <Redux1 /> */}
-    {/* <Redux1Immer /> */}
-    {/* <Redux2 /> */}
-    {/* <Redux2Immer /> */}
-  </div>
+	<div>
+		<Elements />
+		{/* <Redux1 /> */}
+		{/* <Redux1Immer /> */}
+		{/* <Redux2 /> */}
+		{/* <Redux2Immer /> */}
+	</div>
 )

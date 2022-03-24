@@ -8,10 +8,10 @@ import reportWebVitals from './reportWebVitals'
 import './index.css'
 
 const app = (
-  <React.StrictMode>
-    {/* <App /> */}
-    <Demo />
-  </React.StrictMode>
+	<React.StrictMode>
+		{/* <App /> */}
+		<Demo />
+	</React.StrictMode>
 )
 
 const path = document.getElementById('root')

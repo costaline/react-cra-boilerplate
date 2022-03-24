@@ -1,3 +1,3 @@
 export interface TsElementProps {
-  className?: string
+	className?: string
 }

@@ -13,25 +13,25 @@ import { ScssScopedElement } from './ScssScopedElement'
 import { TsElement } from './TsElement'
 
 export const Elements = () => (
-  <div>
-    <header>
-      <h1>Main features</h1>
-    </header>
+	<div>
+		<header>
+			<h1>Main features</h1>
+		</header>
 
-    <main>
-      <CssElement />
-      <CssModuleElement />
-      <CssScopedElement />
-      <SassElement />
-      <SassModuleElement />
-      <SassScopedElement />
-      <ScssElement />
-      <ScssModuleElement />
-      <ScssScopedElement />
-      <EmotionStyledElement />
-      <EmotionCssElement />
-      <JsElement />
-      <TsElement />
-    </main>
-  </div>
+		<main>
+			<CssElement />
+			<CssModuleElement />
+			<CssScopedElement />
+			<SassElement />
+			<SassModuleElement />
+			<SassScopedElement />
+			<ScssElement />
+			<ScssModuleElement />
+			<ScssScopedElement />
+			<EmotionStyledElement />
+			<EmotionCssElement />
+			<JsElement />
+			<TsElement />
+		</main>
+	</div>
 )

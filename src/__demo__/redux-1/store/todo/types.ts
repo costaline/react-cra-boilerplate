@@ -1,34 +1,34 @@
 import { TodoActionTypes } from './constants'
 
 export interface TodoState {
-  todos: any[]
-  loading: boolean
-  error: null | string
-  page: number
-  limit: number
+	todos: any[]
+	loading: boolean
+	error: null | string
+	page: number
+	limit: number
 }
 
 interface FetchTodoAction {
-  type: TodoActionTypes.FETCH_TODOS
+	type: TodoActionTypes.FETCH_TODOS
 }
 
 interface FetchTodoSuccessAction {
-  type: TodoActionTypes.FETCH_TODOS_SUCCESS
-  payload: any[]
+	type: TodoActionTypes.FETCH_TODOS_SUCCESS
+	payload: any[]
 }
 
 interface FetchTodoErrorAction {
-  type: TodoActionTypes.FETCH_TODOS_ERROR
-  payload: string
+	type: TodoActionTypes.FETCH_TODOS_ERROR
+	payload: string
 }
 
 interface SetTodoPage {
-  type: TodoActionTypes.SET_TODO_PAGE
-  payload: number
+	type: TodoActionTypes.SET_TODO_PAGE
+	payload: number
 }
 
 export type TodoAction =
-  | FetchTodoAction
-  | FetchTodoSuccessAction
-  | FetchTodoErrorAction
-  | SetTodoPage
+	| FetchTodoAction
+	| FetchTodoSuccessAction
+	| FetchTodoErrorAction
+	| SetTodoPage

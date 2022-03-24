@@ -1,5 +1,5 @@
 import './App.css'
 
 export function App() {
-  return <div className="app">APP</div>
+	return <div className="app">APP</div>
 }
