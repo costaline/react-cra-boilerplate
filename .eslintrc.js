@@ -126,16 +126,16 @@ module.exports = {
 			{
 				groups: [
 					[
+						// Side effects
+						'^\\u0000',
+					],
+					[
 						// React
 						'^(react)$',
 						// Node.js builtins
 						`^(${require('module').builtinModules.join('|')})(/|$)`,
 						// Other packages
 						'^@?\\w',
-					],
-					[
-						// Side effects
-						'^\\u0000',
 					],
 					[
 						// Alias imports
