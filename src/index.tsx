@@ -5,6 +5,9 @@ import { createRoot } from 'react-dom/client'
 import Demo from './__demo__'
 import reportWebVitals from './reportWebVitals'
 
+import 'sanitize.css'
+import 'sanitize.css/forms.css'
+import 'sanitize.css/typography.css'
 import './index.css'
 
 const app = (
