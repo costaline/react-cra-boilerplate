@@ -18,7 +18,16 @@ module.exports = {
 	}) => {
 		const { pathToFile } = pluginOptions
 		const pathToDir = pathToFile.split('/').slice(0, -1).join('/')
-		const additionalResources = require(path.resolve(process.cwd(), pathToFile))
+
+		let additionalResources = null
+
+		try {
+			additionalResources = require(path.resolve(process.cwd(), pathToFile))
+		} catch(error) {
+			console.log(`File "${pathToFile}" not found`)
+		}
+
+		if (!additionalResources?.length) return cracoConfig
 
 		const cracoLoaderOptions = cracoConfig.style.sass?.loaderOptions
 
