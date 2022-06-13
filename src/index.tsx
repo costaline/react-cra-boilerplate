@@ -6,7 +6,8 @@ import reportWebVitals from './reportWebVitals'
 import 'sanitize.css'
 import 'sanitize.css/forms.css'
 import 'sanitize.css/typography.css'
-import './assets/styles/scaffolding.css'
+import './assets/fonts/index.scss'
+import './assets/styles/scaffolding.scss'
 
 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 const container = document.getElementById('root')!
