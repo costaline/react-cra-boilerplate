@@ -1,26 +1,18 @@
-import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 
-// import { App } from './App'
-import Demo from './__demo__'
+import { Root } from '@@/Root'
 import reportWebVitals from './reportWebVitals'
 
 import 'sanitize.css'
 import 'sanitize.css/forms.css'
 import 'sanitize.css/typography.css'
-import './index.css'
+import './assets/styles/scaffolding.css'
 
-const app = (
-	<StrictMode>
-		{/* <App /> */}
-		<Demo />
-	</StrictMode>
-)
-
+// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 const container = document.getElementById('root')!
 const root = createRoot(container)
 
-root.render(app)
+root.render(<Root />)
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
