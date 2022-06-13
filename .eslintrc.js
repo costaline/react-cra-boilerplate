@@ -83,9 +83,15 @@ module.exports = {
 				tsx: 'never',
 			},
 		],
-		'import/order': 'warn',
+		'import/no-cycle': 'off',
 		'import/no-unresolved': 'error',
+		'import/order': 'warn',
 		'import/prefer-default-export': 'off',
+
+		'jsx-a11y/click-events-have-key-events': 'warn',
+		'jsx-a11y/no-noninteractive-element-interactions': 'warn',
+
+		'object-shorthand': ['warn', 'properties'],
 
 		'prettier/prettier': 'warn',
 
@@ -96,12 +102,16 @@ module.exports = {
 				ignoreClassFields: true,
 			},
 		],
+		'react/forbid-prop-types': ['warn', { forbid: ['any', 'array'] }],
 		'react/function-component-definition': 'off',
+		'react/jsx-curly-brace-presence': ['warn', 'never'],
 		'react/jsx-filename-extension': [
 			'warn',
 			{ extensions: ['js', 'jsx', '.tsx'] },
 		],
 		'react/jsx-key': ['warn', { checkKeyMustBeforeSpread: true }],
+		'react/jsx-no-useless-fragment': ['warn', { allowExpressions: true }],
+		'react/jsx-props-no-spreading': 'off',
 		'react/jsx-sort-props': [
 			'warn',
 			{
@@ -115,6 +125,7 @@ module.exports = {
 		],
 		'react/jsx-uses-react': 'warn',
 		'react/jsx-uses-vars': 'warn',
+		'react/no-unused-prop-types': 'warn',
 		'react/prop-types': 'warn',
 		'react/react-in-jsx-scope': 'off',
 		'react/require-default-props': 'off',

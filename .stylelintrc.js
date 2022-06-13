@@ -16,8 +16,11 @@ module.exports = {
 			},
 		],
 		'at-rule-no-unknown': null,
+		'color-hex-case': 'lower',
+		'color-hex-length': 'long',
 		'declaration-colon-space-after': 'always-single-line',
 		'declaration-colon-space-before': 'never',
+		'declaration-block-trailing-semicolon': 'always',
 		'indentation': 'tab',
 		'no-missing-end-of-source-newline': true,
 		'rule-empty-line-before': [
@@ -26,6 +29,7 @@ module.exports = {
 				except: ['after-single-line-comment', 'first-nested'],
 			},
 		],
+		'selector-class-pattern': null,
 	},
 
 	overrides: [
@@ -38,6 +42,13 @@ module.exports = {
 				'stylelint-config-prettier',
 			],
 			rules: {
+				'value-keyword-case': [
+					'lower',
+					{
+						ignoreProperties: ['/^[$]/']
+					}
+				],
+
 				'scss/dollar-variable-first-in-block': [
 					true,
 					{
@@ -51,6 +62,11 @@ module.exports = {
 
 		{
 			files: ['*.sass', '**/*.sass'],
+
+			rules: {
+				'declaration-block-trailing-semicolon': 'never',
+				'selector-type-no-unknown': [true, { ignoreTypes: ["/^\+/"] }]
+			},
 
 			customSyntax: 'sugarss',
 		},
@@ -66,6 +82,10 @@ module.exports = {
 				'*.tsx',
 				'**/*.tsx',
 			],
+
+			rules: {
+				'value-keyword-case': null
+			},
 
 			processors: ['stylelint-processor-styled-components'],
 
