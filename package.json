@@ -6,7 +6,6 @@
 		"node": "^16"
 	},
 	"scripts": {
-		"preinstall": "check-engine",
 		"prestart": "check-engine",
 		"start": "craco start",
 		"prebuild": "check-engine",
