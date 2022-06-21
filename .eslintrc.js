@@ -109,6 +109,7 @@ module.exports = {
 			'warn',
 			{ extensions: ['js', 'jsx', '.tsx'] },
 		],
+		'react/jsx-fragments': 'off',
 		'react/jsx-key': ['warn', { checkKeyMustBeforeSpread: true }],
 		'react/jsx-no-useless-fragment': ['warn', { allowExpressions: true }],
 		'react/jsx-props-no-spreading': 'off',
@@ -161,9 +162,10 @@ module.exports = {
 					],
 					[
 						// Styles
-						'\\.module\\.(css|scss|sass)$',
-						'\\.scoped\\.(css|scss|sass)$',
 						'\\.(css|scss|sass)$',
+						'\\.scoped\\.(css|scss|sass)$',
+						'\\.module\\.(css|scss|sass)$',
+						'\\.(emcss)$', // emotion css-in-js
 						// Images
 						'^.+\\.bmp$',
 						'^.+\\.jpe?g$',

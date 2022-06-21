@@ -65,7 +65,7 @@ module.exports = {
 
 			rules: {
 				'declaration-block-trailing-semicolon': 'never',
-				'selector-type-no-unknown': [true, { ignoreTypes: ["/^\+/"] }]
+				'selector-type-no-unknown': null
 			},
 
 			customSyntax: 'sugarss',
